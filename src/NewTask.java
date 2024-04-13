@@ -24,7 +24,7 @@ public class NewTask {
             channel.basicPublish("", TASK_QUEUE_NAME,
                     MessageProperties.PERSISTENT_TEXT_PLAIN,
                     message.getBytes("UTF-8"));
-            System.out.println(" [x] Sent '" + message + "'");
+            System.out.println(" [x] Sent '" + message + "oi....'");
         }
     }
 
