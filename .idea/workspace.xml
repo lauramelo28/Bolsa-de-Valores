@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/BrokerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/StockExchangeApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" afterDir="false" />
->>>>>>> Stashed changes
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,8 +119,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.BrokerApp" />
         <item itemvalue="Application.StockExchangeApp" />
+        <item itemvalue="Application.BrokerApp" />
         <item itemvalue="Application.StockExchangeReceiver" />
         <item itemvalue="Application.ReceiveLogsTopic" />
       </list>
@@ -154,11 +141,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-<<<<<<< Updated upstream
-          <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="3" />
-=======
           <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
@@ -167,7 +149,6 @@
           <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/StockExchangeApp.java</url>
           <line>7</line>
           <option name="timeStamp" value="8" />
->>>>>>> Stashed changes
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
