@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/EmitLogTopic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogsTopic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/Teste.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2f4VuH7TKHanbeNyCNUNbHt4PZg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Recv.executor": "Run",
+    "Application.Send.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "maven-project",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores"
+  }
+}]]></component>
+  <component name="RunManager" selected="Application.Recv">
+    <configuration name="Recv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Recv" />
+      <module name="bolsa-de-valores" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Send" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Send" />
+      <module name="bolsa-de-valores" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Bolsa-de-Valores" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Bolsa-de-Valores" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Recv" />
+        <item itemvalue="Application.Send" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="" />
+      <created>1713060558144</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1713060558144</updated>
+    </task>
+    <servers />
+  </component>
+</project>

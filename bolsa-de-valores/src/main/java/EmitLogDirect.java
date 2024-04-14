@@ -9,12 +9,11 @@ public class EmitLogDirect {
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        //factory.setHost("localhost");
+
         factory.setHost("gull.rmq.cloudamqp.com");
         factory.setUsername("gugkzyzc");
         factory.setPassword("g_2i_cDGP5kzu-fFabbs7QPIpmI4uQXF");
         factory.setVirtualHost("gugkzyzc");
-
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
