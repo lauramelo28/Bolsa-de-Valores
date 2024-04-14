@@ -3,34 +3,32 @@ import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 
-public class EmitLogTopic {
+public class EmitLogDirect {
 
-    private static final String EXCHANGE_NAME = "topic_logs";
+    private static final String EXCHANGE_NAME = "direct_logs";
 
     public static void main(String[] argv) throws Exception {
         ConnectionFactory factory = new ConnectionFactory();
-        //factory.setHost("localhost");
+
         factory.setHost("gull.rmq.cloudamqp.com");
         factory.setUsername("gugkzyzc");
         factory.setPassword("g_2i_cDGP5kzu-fFabbs7QPIpmI4uQXF");
         factory.setVirtualHost("gugkzyzc");
-
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
+            channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.DIRECT);
 
-            channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.TOPIC);
-
-            String routingKey = getRouting(argv);
+            String severity = getSeverity(argv);
             String message = getMessage(argv);
 
-            channel.basicPublish(EXCHANGE_NAME, routingKey, null, message.getBytes("UTF-8"));
-            System.out.println(" [x] Sent '" + routingKey + "':'" + message + "'");
+            channel.basicPublish(EXCHANGE_NAME, severity, null, message.getBytes("UTF-8"));
+            System.out.println(" [x] Sent '" + severity + "':'" + message + "'");
         }
     }
 
-    private static String getRouting(String[] strings) {
+    private static String getSeverity(String[] strings) {
         if (strings.length < 1)
-            return "anonymous.info";
+            return "info";
         return strings[0];
     }
 
@@ -43,7 +41,7 @@ public class EmitLogTopic {
     private static String joinStrings(String[] strings, String delimiter, int startIndex) {
         int length = strings.length;
         if (length == 0) return "";
-        if (length < startIndex) return "";
+        if (length <= startIndex) return "";
         StringBuilder words = new StringBuilder(strings[startIndex]);
         for (int i = startIndex + 1; i < length; i++) {
             words.append(delimiter).append(strings[i]);

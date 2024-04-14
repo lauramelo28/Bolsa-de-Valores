@@ -1,4 +1,3 @@
-
 import com.rabbitmq.client.*;
 
 
@@ -7,8 +6,8 @@ public class ReceiveLogsDirect {
     private static final String EXCHANGE_NAME = "direct_logs";
 
     public static void main(String[] argv) throws Exception {
+        argv = new String[]{"info"};
         ConnectionFactory factory = new ConnectionFactory();
-        //factory.setHost("localhost");
 
         factory.setHost("gull.rmq.cloudamqp.com");
         factory.setUsername("gugkzyzc");
