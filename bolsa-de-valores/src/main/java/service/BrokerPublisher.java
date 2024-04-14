@@ -31,8 +31,6 @@ public class BrokerPublisher extends Thread {
             channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.TOPIC);
 
             channel.basicPublish(EXCHANGE_NAME, topic, null, message.getBytes("UTF-8"));
-
-            System.out.println(" [x] Sent message for BROKER exchange. Topic: '" + topic + "' Message: '" + message + "'");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

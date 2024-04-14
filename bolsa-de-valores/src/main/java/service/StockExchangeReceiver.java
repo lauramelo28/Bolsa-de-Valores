@@ -6,20 +6,16 @@ import repository.LivroOfertasRepository;
 import repository.TransacoesRepository;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeoutException;
+import java.nio.charset.StandardCharsets;
 
 import utils.RabbitMqConfig;
 
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
 
 /**
  * Classe responsável por receber mensagens do exchange BROKER
@@ -50,7 +46,7 @@ public class StockExchangeReceiver extends Thread {
             System.out.println(" [*] Waiting for messages. To exit press CTRL+C, queue: " + queueName);
 
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-                String message = new String(delivery.getBody(), "UTF-8");
+                String message = new String(delivery.getBody(), StandardCharsets.UTF_8);
                 String routingKey = delivery.getEnvelope().getRoutingKey();
                 System.out.println(" [x] Received '" + message + "' with routing key '" + routingKey + "'");
 
@@ -62,17 +58,23 @@ public class StockExchangeReceiver extends Thread {
              
                 LivroOfertasRepository.inserirOferta(tipoTransacao, codigoAtivo, message);
 
+                //Envia ao tópico compra.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que a bolsa de valores recebeu uma ordem de compra
+                StockExchangePublisher stockExchangePublisher = new StockExchangePublisher(routingKey, message);
+                stockExchangePublisher.start();
+
                 if(tipoTransacao.equals("venda")) {                  
                                       
                     String[] itemsMessage = message.replaceAll("[<>]", "").split(";");
                     String broker = itemsMessage[2];
+                    int amount = Integer.parseInt(itemsMessage[0]);
                     
                     String caminhoArquivo = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv";
-                    Double valorOrdemCompra = 0.0;
-                    Double valorOrdemVenda = 0.0;
+                    double valorOrdemCompra = 0.0;
+                    double valorOrdemVenda = 0.0;
                     LocalDateTime dataAtual = LocalDateTime.now();
                     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm");
                     String dataFormatada = dataAtual.format(formato);
+                    String topicoTransacao = "transacao." + codigoAtivo;
 
                     //Lê o arquivo para comparar os valores da ordem de compra e ordem de venda
                     try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
@@ -94,21 +96,21 @@ public class StockExchangeReceiver extends Thread {
                     if(valorOrdemVenda >= valorOrdemCompra){                       
                         LivroOfertasRepository.removerAtivo(codigoAtivo, message);
                         TransacoesRepository.inserirTransacao(dataFormatada, codigoAtivo, message);
+
+                        String messageTransaction = dataFormatada + ";" + broker + ";" + broker + ";" + amount + ";" + valorOrdemVenda + ">";
+
+                        //Envia ao tópico transacao.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que foi efetuada uma transação
+                        StockExchangePublisher stockExchangePublisherTransaction = new StockExchangePublisher(topicoTransacao, messageTransaction);
+                        stockExchangePublisherTransaction.start();
                     } else{
                         System.out.println("Ordem de venda inválida");
-                    }          
-                
-                }
-
-                //Envia ao tópico compra.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que a bolsa de valores recebeu uma ordem de compra
-                StockExchangePublisher stockExchangePublisher = new StockExchangePublisher(routingKey, message);
-                stockExchangePublisher.start();
+                    }        
+                }         
             };
-            channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
-            });
+
+            channel.basicConsume(queueName, true, deliverCallback, consumerTag -> { });
 
             System.in.read();
-
         } catch (IOException | TimeoutException e) {
             System.out.println("Error: " + e.getMessage());
         } finally {
@@ -117,14 +119,14 @@ public class StockExchangeReceiver extends Thread {
                 try {
                     channel.close();
                 } catch (IOException | TimeoutException e) {
-                    e.printStackTrace();
+                    System.out.println("Error" + e.getMessage());
                 }
             }
             if (connection != null && connection.isOpen()) { 
                 try {
                     connection.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("Error" + e.getMessage());
                 }
             }
         }

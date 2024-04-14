@@ -16,6 +16,8 @@ public class LivroOfertasRepository {
     
     public static void inserirOferta(String tipoTransacao, String codigoAtivo, String message) {
         String caminhoArquivo = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv";
+
+        message = message.replaceAll("[<>]", "");
         String linha = "<" + tipoTransacao + ";" + codigoAtivo + ";" + message + ">";
 
         try {
