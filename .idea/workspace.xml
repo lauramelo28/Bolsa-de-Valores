@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/BrokerApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/StockExchangeApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/AtivoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/AtivoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/RabbitMqConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,18 +30,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "lauramelo28"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lauramelo28/Bolsa-de-Valores.git",
-    "accountId": "d34d1ea5-ac62-435f-9345-b447e5512072"
-  }
-}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -52,18 +41,19 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.App.executor": "Run",
+    "Application.BrokerApp.executor": "Run",
     "Application.ConectBancoTest.executor": "Run",
     "Application.EmitLogTopic.executor": "Run",
     "Application.ReceiveLogsTopic.executor": "Run",
     "Application.Recv.executor": "Run",
     "Application.Send.executor": "Run",
-    "Application.Service.StockExchangeReceiver.executor": "Run",
+    "Application.StockExchangeApp.executor": "Run",
     "Application.StockExchangeReceiver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "maven-project",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/55319/Desktop/bolsaCerta/Bolsa-de-Valores"
+    "last_opened_file_path": "C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores"
   }
 }]]></component>
   <component name="RunManager" selected="Application.App">
@@ -74,9 +64,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EmitLogTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="EmitLogTopic" />
+    <configuration name="BrokerApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.BrokerApp" />
       <module name="bolsa-de-valores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -88,12 +84,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Service.StockExchangeReceiver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Service.StockExchangeReceiver" />
+    <configuration name="StockExchangeApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="utils.StockExchangeApp" />
       <module name="bolsa-de-valores" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Service.*" />
+          <option name="PATTERN" value="utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,10 +126,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.Service.StockExchangeReceiver" />
+        <item itemvalue="Application.BrokerApp" />
+        <item itemvalue="Application.StockExchangeApp" />
         <item itemvalue="Application.StockExchangeReceiver" />
         <item itemvalue="Application.ReceiveLogsTopic" />
-        <item itemvalue="Application.EmitLogTopic" />
       </list>
     </recent_temporary>
   </component>

@@ -1,4 +1,4 @@
-package Service;
+package service;
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
@@ -32,7 +32,7 @@ public class BrokerPublisher extends Thread {
 
             channel.basicPublish(EXCHANGE_NAME, topic, null, message.getBytes("UTF-8"));
 
-            System.out.println(" [x] Sent BROKER REMOVER DPS '" + topic + "':'" + message + "'");
+            System.out.println(" [x] Sent message for BROKER exchange. Topic: '" + topic + "' Message: '" + message + "'");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -1,18 +1,15 @@
 import java.util.Scanner;
 
 import repository.AtivoRepository;
-import Service.BrokerPublisher;
-import Service.BrokerReceiver;
-import Service.StockExchangeReceiver;
+import service.BrokerPublisher;
 
-
-public class App {
+public class App extends Thread {
 
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws Exception {
         int option = 0;
-
+        
         System.out.print("Broker: ");
         String brokerCode = scanner.nextLine();
 
@@ -40,11 +37,12 @@ public class App {
     //Menu de opções
     private static void menu(){
         clearScreen();
-        System.out.println("--------------------");
-        System.out.println("| 0- Sair          |");        
-        System.out.println("| 1- Comprar ativo |");
-        System.out.println("| 2- Vender ativo  |");
-        System.out.println("---------------------");        
+        System.out.println("------------------------");
+        System.out.println("| 0- Sair              |");
+        System.out.println("| 1- Comprar ativo     |");
+        System.out.println("| 2- Acompanhar compra |");
+        System.out.println("| 3- Vender ativo      |");
+        System.out.println("------------------------");
         System.out.print("\nDigite a ação que deseja executar: ");
     }
 
@@ -87,5 +85,6 @@ public class App {
 
     //Método para vender um ativo
     private static void sellAsset(){
+        //
     }
 }
