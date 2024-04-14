@@ -1,25 +1,15 @@
 <compra;HYPE3;1;10.0;BK01>
 <compra;CIEL;3;30.0;B1>
 <venda;HUPE;1;1.0;B1>
-<venda;RADL3;10;20.0;BRK1>
 <compra;PETR4;2;2.0;laura01>
-<<<<<<< Updated upstream
 <compra;RADF;2;2.0;laurete>
 <compra;aa;25;12.0;lauricha>
 <compra;aa;2;3.0;barbara>
 <compra;VALE3;100;99.0;BRK9>
 <compra;BBDC4;4;2.0;ed>
 <venda;RADF;1;2.0;ed>
-=======
-<compra;RADL3;10;10.0;BRK1>
-<compra;RADL3;10;100.0;brk1>
-<venda;RADL3;2;200.0;brk1>
-<compra;RADL3;100;10.0;BRK1>
-<venda;RADL3;20;999.0;BRK1>
-<venda;radl3;10;100.0;brk9>
-<venda;RADL4;100;9.0;BRK9>
-<compra;aa;2;3.0;barbara>
-<compra;VALE3;100;99.0;BRK9>
-<venda;VALE3;99;199.0;BRK9>
-<venda;DUASVEZES;10;9.0;BRK9>
->>>>>>> Stashed changes
+<compra;GGBR4;100;10.0;BRK1>
+<venda;GGBR4;10;200.0;BRK1>
+<compra;HYPE3;10;2.0;brk9>
+<venda;HYPE3;10;5.0;brk9>
+<compra;RAAAAM;10;1000.0;eded>

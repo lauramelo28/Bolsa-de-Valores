@@ -35,8 +35,8 @@ public class LivroOfertasRepository {
         String caminhoArquivo = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv";
         String arquivoTemporario = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas-temp.csv";
 
-        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo));
-             BufferedWriter bw = new BufferedWriter(new FileWriter(arquivoTemporario))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(arquivoTemporario));
+             BufferedWriter bw = new BufferedWriter(new FileWriter(caminhoArquivo))) {
             String linha;
             while ((linha = br.readLine()) != null) {
                 if (!linha.contains(symbol)) {
@@ -48,13 +48,12 @@ public class LivroOfertasRepository {
             System.out.println("Erro ao ler ou escrever no arquivo: " + e.getMessage());
         }
 
-        // Renomear o arquivo temporário para substituir o arquivo original
-        File arquivoOriginal = new File(caminhoArquivo);
-        File arquivoRenomeado = new File(arquivoTemporario);
-        if (arquivoRenomeado.renameTo(arquivoOriginal)) {
-            System.out.println("Ativo vendido com sucesso: " + symbol);
+        // Excluir o arquivo temporário após a operação
+        File arquivoTemp = new File(arquivoTemporario);
+        if (arquivoTemp.delete()) {
+            System.out.println("Arquivo temporário excluído com sucesso.");
         } else {
-            System.out.println("Erro ao vender o ativo: " + symbol);
+            System.out.println("Erro ao excluir o arquivo temporário.");
         }
         
     }

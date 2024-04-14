@@ -7,6 +7,10 @@
     <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas-temp.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/transacoes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/transacoes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -149,6 +156,16 @@
           <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/StockExchangeApp.java</url>
           <line>7</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/LivroOfertasRepository.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
