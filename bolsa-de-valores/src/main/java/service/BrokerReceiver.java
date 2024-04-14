@@ -1,4 +1,4 @@
-package service;
+package Service;
 
 import com.rabbitmq.client.*;
 
@@ -6,12 +6,20 @@ import utils.RabbitMqConfig;
 
 //Estabelece conexão com o servidor do RabbitMQ e inscreve a fila em um tópico no exchange BOLSADEVALORES
 //Falta transformar em app
+
+/**
+ * Classe responsável por receber mensagens do exchange BOLSADEVALORES
+ */
 public class BrokerReceiver extends Thread {
     private static final String EXCHANGE_NAME = "BOLSADEVALORES";
 
     public static void receive(String topic){
         ConnectionFactory factory = RabbitMqConfig.getConnectionFactory();
 
+        /**
+         * Estabelece conexão com o servidor do RabbitMQ e inscreve a fila em um tópico no exchange BOLSADEVALORES
+         * A fila inscrita no tópico receberá todas as mensagens publicadas no exchange
+         */
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
 

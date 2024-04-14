@@ -4,6 +4,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Classe para conexão com o banco de dados MySQL
+ */
 public class ConectBancoTest {
     public static void main(String[] args) {
         String jdbcUrl = "jdbc:mysql://monorail.proxy.rlwy.net:11973/bolsa_valores";

@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
 import repository.AtivoRepository;
-import service.BrokerPublisher;
-import service.BrokerReceiver;
-import service.StockExchangeReceiver;
+import Service.BrokerPublisher;
+import Service.BrokerReceiver;
+import Service.StockExchangeReceiver;
 
 
 public class App {
@@ -37,6 +37,7 @@ public class App {
         scanner.close();
     }
 
+    //Menu de opções
     private static void menu(){
         clearScreen();
         System.out.println("--------------------");
@@ -47,16 +48,19 @@ public class App {
         System.out.print("\nDigite a ação que deseja executar: ");
     }
 
+    //Método para Limpar a tela
     private static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
 
+    //Método para pausar a execução do programa
     private static void pause() {
         System.out.println("Pressione 'enter' para continuar");
         scanner.nextLine();
     }
 
+    //Método para comprar um ativo
     private static void buyAsset(String broker) {
         AtivoRepository.listarAtivos();
 
@@ -81,6 +85,7 @@ public class App {
         pause();
     }
 
+    //Método para vender um ativo
     private static void sellAsset(){
     }
 }

@@ -4,6 +4,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
 
+/**
+ * Classe responsável por listar os ativos disponíveis para compra e venda presentes na bolsa de valores
+ */
 public class AtivoRepository {
     public static void listarAtivos() {
         System.out.println("Lista de Ativos:");

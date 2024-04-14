@@ -1,4 +1,4 @@
-package service;
+package Service;
 
 import com.rabbitmq.client.*;
 
@@ -7,7 +7,10 @@ import java.util.concurrent.TimeoutException;
 
 import utils.RabbitMqConfig;
 
-//Inscreve a fila em um tópico no exchange BROKER, a fila inscrita no tópico receberá todas as mensagens publicadas no exchange
+
+/**
+ * Classe responsável por receber mensagens do exchange BROKER
+ */
 public class StockExchangeReceiver extends Thread {
     private static final String EXCHANGE_NAME = "BROKER";
 
@@ -17,6 +20,10 @@ public class StockExchangeReceiver extends Thread {
         Connection connection = null;
         Channel channel = null;
 
+        /*
+        * Estabelece conexão com o servidor do RabbitMQ e inscreve a fila em um tópico no exchange BROKER
+        * A fila inscrita no tópico receberá todas as mensagens publicadas no exchange
+        */
         try {
             connection = factory.newConnection();
             channel = connection.createChannel();
@@ -48,7 +55,7 @@ public class StockExchangeReceiver extends Thread {
                     e.printStackTrace();
                 }
             }
-            if (connection != null && connection.isOpen()) {
+            if (connection != null && connection.isOpen()) { 
                 try {
                     connection.close();
                 } catch (IOException e) {

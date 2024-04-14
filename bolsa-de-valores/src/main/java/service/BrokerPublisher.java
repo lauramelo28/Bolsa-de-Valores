@@ -1,4 +1,4 @@
-package service;
+package Service;
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel;
@@ -7,7 +7,9 @@ import com.rabbitmq.client.ConnectionFactory;
 
 import utils.RabbitMqConfig;
 
-//Responsável por publicar mensagens em um tópico no exchange "BROKER"
+/**
+ * Classe responsável por publicar mensagens em um tópico no exchange "BROKER"
+ */
 public class BrokerPublisher extends Thread {
     private String topic;
     private String message;
