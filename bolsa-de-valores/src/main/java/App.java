@@ -23,9 +23,6 @@ public class App extends Thread {
                     buyAsset(brokerCode);
                     break;
                 case 2:
-                    System.out.println("Op 2");
-                    break;
-                case 3:
                     sellAsset(brokerCode);
                     break;
                 default:
@@ -43,8 +40,7 @@ public class App extends Thread {
         System.out.println("------------------------");
         System.out.println("| 0- Sair              |");
         System.out.println("| 1- Comprar ativo     |");
-        System.out.println("| 2- Acompanhar compra |");
-        System.out.println("| 3- Vender ativo      |");
+        System.out.println("| 2- Vender ativo      |");
         System.out.println("------------------------");
         System.out.print("\nDigite a ação que deseja executar: ");
     }
