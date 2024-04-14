@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bolsa-de-Valores.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-rabbitMQ.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/amqp-client-5.16.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/slf4j-api-1.7.36.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/slf4j-simple-1.7.36.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmitLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmitLogDirect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EmitLogTopic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NewTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReceiveLogs.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReceiveLogsDirect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReceiveLogsTopic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Recv.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Send.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Worker.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/EmitLogTopic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogsTopic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/Teste.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,14 +26,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Recv.executor": "Run",
+    "Application.Send.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "maven-project",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Recv">
     <configuration name="Recv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Recv" />
