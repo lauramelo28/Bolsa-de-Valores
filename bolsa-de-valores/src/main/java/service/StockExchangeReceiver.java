@@ -2,15 +2,12 @@ package service;
 
 import com.rabbitmq.client.*;
 
+import repository.LivroOfertasRepository;
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.concurrent.TimeoutException;
 
 import utils.RabbitMqConfig;
-
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
 
 /**
  * Classe responsável por receber mensagens do exchange BROKER
@@ -45,29 +42,16 @@ public class StockExchangeReceiver extends Thread {
                 String routingKey = delivery.getEnvelope().getRoutingKey();
                 System.out.println(" [x] Received '" + message + "' with routing key '" + routingKey + "'");
 
-                //Aqui precisa salvar em um arquivo
-                //Caminho para o arquivo 
-                String caminhoArquivo = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv";
 
                 // Extrair o tipo da transação e o símbolo da mensagem
                 String transactionType = routingKey.contains("compra") ? "compra" : "venda";
+
                 String symbol = routingKey.split("\\.")[1]; 
                 message = message.replaceAll("[<>]", "");
-                String linha = "<" + transactionType + ";" + symbol + ";" + message + ">";
 
-                try {
-                    File file = new File(caminhoArquivo);
-                    FileWriter fileWriter = new FileWriter(caminhoArquivo, true);
-                    PrintWriter printWriter = new PrintWriter(fileWriter);
-                    printWriter.println(linha);
-                    printWriter.close();
-                    fileWriter.close();
-                } catch (IOException e) {
-                    System.out.println("Erro ao escrever no arquivo: " + e.getMessage());
-                }
+                LivroOfertasRepository.inserirOferta(transactionType, symbol, message);
 
-                //Envia ao tópico compra.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que a bolsa de valores
-                //recebeu uma ordem de compra
+                //Envia ao tópico compra.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que a bolsa de valores recebeu uma ordem de compra
                 StockExchangePublisher stockExchangePublisher = new StockExchangePublisher(routingKey, message);
                 stockExchangePublisher.start();
             };
