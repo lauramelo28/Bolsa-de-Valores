@@ -1,4 +1,4 @@
-package Service;
+package service;
 
 import com.rabbitmq.client.*;
 
@@ -7,14 +7,14 @@ import java.util.concurrent.TimeoutException;
 
 import utils.RabbitMqConfig;
 
-
 /**
  * Classe responsável por receber mensagens do exchange BROKER
  */
 public class StockExchangeReceiver extends Thread {
     private static final String EXCHANGE_NAME = "BROKER";
 
-    public static void main(String[] args) {
+    @Override
+    public void run() {
         ConnectionFactory factory = RabbitMqConfig.getConnectionFactory();
 
         Connection connection = null;
@@ -37,7 +37,15 @@ public class StockExchangeReceiver extends Thread {
 
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
                 String message = new String(delivery.getBody(), "UTF-8");
-                System.out.println(" [x] Received '" + message + "'");
+                String routingKey = delivery.getEnvelope().getRoutingKey();
+                System.out.println(" [x] Received '" + message + "' with routing key '" + routingKey + "'");
+
+                //Aqui precisa salvar em um arquivo
+
+                //Envia ao tópico compra.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que a bolsa de valores
+                //recebeu uma ordem de compra
+                StockExchangePublisher stockExchangePublisher = new StockExchangePublisher(routingKey, message);
+                stockExchangePublisher.start();
             };
             channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
             });
