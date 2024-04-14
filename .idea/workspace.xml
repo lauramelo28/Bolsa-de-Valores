@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/BrokerApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/StockExchangeApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/AtivoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/repository/AtivoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/RabbitMqConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,25 +33,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.App.executor": "Run",
-    "Application.BrokerApp.executor": "Run",
-    "Application.ConectBancoTest.executor": "Run",
-    "Application.EmitLogTopic.executor": "Run",
-    "Application.ReceiveLogsTopic.executor": "Run",
-    "Application.Recv.executor": "Run",
-    "Application.Send.executor": "Run",
-    "Application.StockExchangeApp.executor": "Run",
-    "Application.StockExchangeReceiver.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "maven-project",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BrokerApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ConectBancoTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EmitLogTopic.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ReceiveLogsTopic.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Recv.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Send.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StockExchangeApp.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StockExchangeReceiver.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;maven-project&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Service.StockExchangeReceiver">
+}</component>
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="bolsa-de-valores" />
@@ -128,7 +121,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.App" />
-        <item itemvalue="Application.Service.StockExchangeReceiver" />
+        <item itemvalue="Application.StockExchangeApp" />
+        <item itemvalue="Application.BrokerApp" />
         <item itemvalue="Application.StockExchangeReceiver" />
         <item itemvalue="Application.ReceiveLogsTopic" />
       </list>
@@ -144,21 +138,5 @@
       <updated>1713060558144</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java</url>
-          <line>8</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/Service/StockExchangeReceiver.java</url>
-          <line>17</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

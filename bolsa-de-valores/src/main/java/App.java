@@ -23,7 +23,10 @@ public class App extends Thread {
                     buyAsset(brokerCode);
                     break;
                 case 2:
-                    sellAsset();
+                    System.out.println("Op 2");
+                    break;
+                case 3:
+                    sellAsset(brokerCode);
                     break;
                 default:
                     System.out.println("Opção inválida, tente novamente");
@@ -84,7 +87,27 @@ public class App extends Thread {
     }
 
     //Método para vender um ativo
-    private static void sellAsset(){
-        //
+    private static void sellAsset(String broker){
+        AtivoRepository.listarAtivos();
+
+        System.out.println("--------------------");
+        System.out.print("Codigo do ativo: ");
+        String codigo = scanner.next();
+
+        System.out.print("Quantidade: ");
+        int quantidade = scanner.nextInt();
+
+        System.out.print("Valor: ");
+        double valor = scanner.nextDouble();
+
+        String topic = "venda." + codigo;
+        String message = "<" + quantidade + ";" + valor + ";"
+                + broker + ">";
+
+        //Publicar a mensagem em um tópico no exchange "BROKER" utilizando thread
+        BrokerPublisher brokerPublisher = new BrokerPublisher(topic, message);
+        brokerPublisher.start();
+
+        pause();
     }
 }
