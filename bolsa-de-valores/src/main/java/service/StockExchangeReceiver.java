@@ -3,11 +3,23 @@ package service;
 import com.rabbitmq.client.*;
 
 import repository.LivroOfertasRepository;
+import repository.TransacoesRepository;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 import utils.RabbitMqConfig;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 
 /**
  * Classe responsável por receber mensagens do exchange BROKER
@@ -44,12 +56,49 @@ public class StockExchangeReceiver extends Thread {
 
 
                 // Extrair o tipo da transação e o símbolo da mensagem
-                String transactionType = routingKey.contains("compra") ? "compra" : "venda";
+                String tipoTransacao = routingKey.contains("compra") ? "compra" : "venda";
+                String codigoAtivo = routingKey.split("\\.")[1]; 
+                message = message.replaceAll("[<>]", ""); // Remove os caracteres < e > da mensagem
+             
+                LivroOfertasRepository.inserirOferta(tipoTransacao, codigoAtivo, message);
 
-                String symbol = routingKey.split("\\.")[1]; 
-                message = message.replaceAll("[<>]", "");
+                if(tipoTransacao.equals("venda")) {                  
+                                      
+                    String[] itemsMessage = message.replaceAll("[<>]", "").split(";");
+                    String broker = itemsMessage[2];
+                    
+                    String caminhoArquivo = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv";
+                    Double valorOrdemCompra = 0.0;
+                    Double valorOrdemVenda = 0.0;
+                    LocalDateTime dataAtual = LocalDateTime.now();
+                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm");
+                    String dataFormatada = dataAtual.format(formato);
 
-                LivroOfertasRepository.inserirOferta(transactionType, symbol, message);
+                    //Lê o arquivo para comparar os valores da ordem de compra e ordem de venda
+                    try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) {
+                        String linha;
+                        while ((linha = br.readLine()) != null) {
+                            if (linha.contains("compra") && linha.contains(codigoAtivo)) {
+                                valorOrdemCompra = (Double.parseDouble(linha.split(";")[3]));                  
+                            }
+                            if (linha.contains("venda") && linha.contains(codigoAtivo)) {
+                                valorOrdemVenda = (Double.parseDouble(linha.split(";")[3]));                  
+                            }
+
+                        }
+                    } catch (IOException e) {
+                        System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+                    }
+
+                    //Verifica se é uma venda válida. Se for, remove o ativo do livro de ofertas e armazena na tabela transação
+                    if(valorOrdemVenda >= valorOrdemCompra){                       
+                        LivroOfertasRepository.removerAtivo(codigoAtivo, message);
+                        TransacoesRepository.inserirTransacao(dataFormatada, codigoAtivo, message);
+                    } else{
+                        System.out.println("Ordem de venda inválida");
+                    }          
+                
+                }
 
                 //Envia ao tópico compra.ativo no exchange "BOLSADEVALORES" uma mensagem noticando que a bolsa de valores recebeu uma ordem de compra
                 StockExchangePublisher stockExchangePublisher = new StockExchangePublisher(routingKey, message);

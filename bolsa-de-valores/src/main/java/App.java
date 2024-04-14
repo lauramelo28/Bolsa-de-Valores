@@ -3,6 +3,14 @@ import java.util.Scanner;
 import repository.AtivoRepository;
 import service.BrokerPublisher;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 public class App extends Thread {
 
     private static Scanner scanner = new Scanner(System.in);
@@ -82,26 +90,42 @@ public class App extends Thread {
         pause();
     }
 
-    //Método para vender um ativo
-    private static void sellAsset(String broker){
-        AtivoRepository.listarAtivos();
-
+     //Método para vender um ativo
+    private static void sellAsset(String broker) throws IOException{
+        
+        //buscar no arquivo livro-deofertas os ativos que comprou, para ele selecionar para vender
+        String caminhoArquivo = "./bolsa-de-valores/src/main/java/files/livro-de-ofertas.csv";
+       
+        System.out.println("Ativos disponíveis para venda:");
         System.out.println("--------------------");
-        System.out.print("Codigo do ativo: ");
-        String codigo = scanner.next();
-
+        try (BufferedReader br = new BufferedReader(new FileReader(caminhoArquivo))) { // lista todos os ativos que o broker comprou
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                if (linha.contains("compra")) {
+                    String ativo = linha.split(";")[1];
+                    System.out.println(ativo);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+        }
+        System.out.println("--------------------");
+        System.out.print("Digite o ativo que deseja vender: ");
+        String ativo = scanner.next();
+        
+        //parametros para o broker
         System.out.print("Quantidade: ");
         int quantidade = scanner.nextInt();
 
         System.out.print("Valor: ");
         double valor = scanner.nextDouble();
 
-        String topic = "venda." + codigo;
+        String topic = "venda." + ativo;
         String message = "<" + quantidade + ";" + valor + ";"
-                + broker + ">";
+                            + broker + ">";
 
         //Publicar a mensagem em um tópico no exchange "BROKER" utilizando thread
-        BrokerPublisher brokerPublisher = new BrokerPublisher(topic, message);
+        BrokerPublisher brokerPublisher = new BrokerPublisher(topic, message); //arrumar p pegar topico e msg dnv
         brokerPublisher.start();
 
         pause();
