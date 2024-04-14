@@ -5,15 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="780d722e-b28b-4787-a595-d9ed097b3ff9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/EmitLogTopic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogsTopic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/Teste.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ConectBancoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangePublisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/StockExchangeReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/utils/RabbitMqConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/EmitLogTopic.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/EmitLogTopic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogsTopic.java" beforeDir="false" afterPath="$PROJECT_DIR$/bolsa-de-valores/src/main/java/ReceiveLogsTopic.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,25 +43,58 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
+    "Application.ConectBancoTest.executor": "Run",
+    "Application.EmitLogTopic.executor": "Run",
+    "Application.ReceiveLogsTopic.executor": "Run",
     "Application.Recv.executor": "Run",
     "Application.Send.executor": "Run",
+    "Application.StockExchangeReceiver.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "maven-project",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/bmatt/Documents/Faculdade/lab-aplicacoes-distribuidas/Bolsa-de-Valores"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Recv">
-    <configuration name="Recv" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Recv" />
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="App" />
       <module name="bolsa-de-valores" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Send" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Send" />
+    <configuration name="ConectBancoTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ConectBancoTest" />
       <module name="bolsa-de-valores" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmitLogTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="EmitLogTopic" />
+      <module name="bolsa-de-valores" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReceiveLogsTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ReceiveLogsTopic" />
+      <module name="bolsa-de-valores" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StockExchangeReceiver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="service.StockExchangeReceiver" />
+      <module name="bolsa-de-valores" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -66,8 +114,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Recv" />
-        <item itemvalue="Application.Send" />
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.StockExchangeReceiver" />
+        <item itemvalue="Application.ReceiveLogsTopic" />
+        <item itemvalue="Application.EmitLogTopic" />
+        <item itemvalue="Application.ConectBancoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -81,5 +132,16 @@
       <updated>1713060558144</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/bolsa-de-valores/src/main/java/service/BrokerPublisher.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

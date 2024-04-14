@@ -8,6 +8,7 @@ public class ReceiveLogsTopic {
     private static final String EXCHANGE_NAME = "topic_logs";
 
     public static void main(String[] argv) throws Exception {
+        argv = new String[]{"info", "info"};
         ConnectionFactory factory = new ConnectionFactory();
         //factory.setHost("localhost");
         factory.setHost("gull.rmq.cloudamqp.com");
